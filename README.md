@@ -3,7 +3,7 @@ SSH bruteforcer written in Go
 
 ## Usage
 ```bash
-$> brutessh  -h                                                                
+$> brutessh -h                                                                
 CAUTION: |worker-count| <= |passwords|
 Usage of brutessh:
   -count int
