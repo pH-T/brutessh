@@ -100,7 +100,6 @@ func worker(ctx context.Context, inputChannel chan input, cancel context.CancelF
 
 // feeder feeds the lines(=passwords) from the given input file to the worker
 func feeder(ctx context.Context, username string, inputChannel chan input) {
-	// check if file exists
 	f, err := os.Open(*passwordFile)
 	if err != nil {
 		fmt.Println(err)
@@ -117,7 +116,7 @@ func feeder(ctx context.Context, username string, inputChannel chan input) {
 		default:
 			if scanner.Scan() {
 				line := scanner.Text()
-				inputChannel <- input{user: username, password: line, done: false} // TODO: this is a race condition... --> possible deadlock
+				inputChannel <- input{user: username, password: line, done: false} // TODO: this may be a race condition
 			} else {
 				// no more lines in file
 				inputChannel <- input{user: "", password: "", done: true}
