@@ -20,3 +20,6 @@ Usage of brutessh:
     	SSH user to bruteforce
 exit status 2
 ```
+## Why
+
+To learn about context, channels, synchro, ...
