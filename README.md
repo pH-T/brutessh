@@ -1,6 +1,12 @@
 # brutessh
 SSH bruteforcer written in Go
 
+## Building
+
+```bash
+go build brutessh.go
+```
+
 ## Usage
 ```bash
 $> brutessh -h                                                                
